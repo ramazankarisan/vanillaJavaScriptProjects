@@ -1,0 +1,36 @@
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#value {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.button-container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  font-size: 1.1rem;
+  background-color: lightgray;
+  border: none;
+  border-radius: 10%;
+}
+.btn:hover {
+  background-color: lightcoral;
+}
