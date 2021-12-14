@@ -1,7 +1,4 @@
 // local reviews 
-// import img from './images/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg'
-// import img2 from './images/ben-parker-OhKElOkQ3RE-unsplash.jpg'
-// import img3 from './images/toa-heftiba-O3ymvT7Wf9U-unsplash.jpg'
 
 const reviews = [
   {
@@ -50,10 +47,37 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // show person based on item
 
-function showPerson(person) {
-  const item = reviews[person];
+function showPerson() {
+  const item = reviews[currentItem];
   image.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text
 }
+
+// show next person
+nextBtn.addEventListener('click', () => {
+  currentItem++;
+
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0
+  }
+  showPerson()
+})
+
+// show prev person
+prevBtn.addEventListener('click', () => {
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showPerson()
+})
+
+// random
+
+randomBtn.addEventListener('click', () => {
+  currentItem = Math.floor(Math.random() * reviews.length)
+  console.log(currentItem);
+  showPerson()
+})
